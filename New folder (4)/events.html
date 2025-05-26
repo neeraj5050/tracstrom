@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EventHive - Events</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🐝 EventHive</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="clubs.html">Clubs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="announcements.html">News</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </header>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Popup Reminder</title>
+  <style>
+    #popup {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background-color: white;
+      border: 2px solid #333;
+      padding: 20px;
+      z-index: 100;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    #popup button {
+      margin-top: 10px;
+      padding: 5px 10px;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 99;
+    }
+  </style>
+</head>
+<body>
+
+<div id="overlay"></div>
+
+<div id="popup">
+  <p>⏰ Don’t forget to register for the event!</p>
+  <button onclick="closePopup()">Close</button>
+</div>
+
+<script>
+  // Show popup after 3 seconds
+  setTimeout(function() {
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+  }, 3000);
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
+
+  <section class="events-header">
+    <h2>All Upcoming Events</h2>
+    <div class="filters">
+      <select>
+        <option value="">All Categories</option>
+        <option value="tech">Technology</option>
+        <option value="cultural">Cultural</option>
+        <option value="sports">Sports</option>
+        <option value="arts">Arts</option>
+      </select>
+      <select>
+        <option value="">Sort By</option>
+        <option value="latest">Latest</option>
+        <option value="popular">Most Popular</option>
+        <option value="date">By Date</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="card-container">
+    <div class="card">
+      <img src="my 2-hack.jpg.jpg" alt="Tech Event">
+      <h3>Hackathon 2025</h3>
+      <p>Organized by Tech Club<br>📅 June 5 | 📍 Main Hall</p>
+      <a href="event-detail.html" class="btn">Register Now</a>
+    </div>
+
+    <div class="card">
+      <img src="my 5-hack.jpg.jpg" alt="Cultural Event">
+      <h3>Fusion Fiesta</h3>
+      <p>Organized by Culture Club<br>📅 June 10 | 📍 Open Stage</p>
+      <a href="event-detail.html" class="btn">Register Now</a>
+    </div>
+
+    <div class="card">
+      <img src="my 4-hack.jpg.jpg" alt="Sports Event">
+      <h3>Intercollege Football</h3>
+      <p>Organized by Sports Club<br>📅 June 15 | 📍 Sports Ground</p>
+      <a href="event-detail.html" class="btn">Register Now</a>
+    </div>
+    
+
+    <!-- Add more event cards -->
+  </section>
+
+  <footer>
+    <p>© 2025 EventHive | Powered by Campus Clubs</p>
+  </footer>
+</body>
+</html>

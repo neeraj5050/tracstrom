@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Registration</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Simple styling for registration form */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+    .registration-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    label {
+      font-weight: bold;
+      color: #555;
+    }
+    input, select {
+      padding: 0.6rem;
+      border-radius: 8px;
+      border: 1.5px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      background: #ffcc00;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #ffdb4d;
+    }
+  </style>
+</head>
+<body>
+
+<div class="registration-container">
+  <h2 id="reg-event-title">Register for Event</h2>
+  <form id="registration-form">
+    <label for="fullname">Full Name *</label>
+    <input type="text" id="fullname" name="fullname" required />
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="phone">Phone Number *</label>
+    <input type="tel" id="phone" name="phone" required />
+
+    <label for="ticket-type">Ticket Type *</label>
+    <select id="ticket-type" name="ticket-type" required>
+      <option value="">Select ticket type</option>
+      <option value="regular">Regular</option>
+      <option value="vip">VIP</option>
+    </select>
+
+    <button type="submit">Submit Registration</button>
+  </form>
+</div>
+
+<script>
+  // Same events data as before (could be external for reuse)
+  const eventsData = {
+    "photography-workshop": {
+      title: "Photography Workshop"
+    },
+    "coding-bootcamp": {
+      title: "Coding Bootcamp"
+    },
+    "music-festival": {
+      title: "Music Festival"
+    }
+  };
+
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  const eventId = getQueryParam('event');
+  const event = eventsData[eventId];
+
+  const eventTitleEl = document.getElementById('reg-event-title');
+  const form = document.getElementById('registration-form');
+
+  if (event) {
+    eventTitleEl.textContent = `Register for ${event.title}`;
+  } else {
+    eventTitleEl.textContent = 'Event Not Found';
+    form.style.display = 'none';
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Simple validation can be enhanced here
+    alert(`Thanks for registering for ${event.title}! We'll contact you soon.`);
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
