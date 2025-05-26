@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>EventHive - Home</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -21,22 +22,67 @@
   <section class="hero">
     <h2>Buzzing with Club Events!</h2>
     <p>Stay updated with what's happening on campus.</p>
+    <a href="clubs.html" class="cta-btn">✨ Explore Clubs</a>
+    <div id="countdown">
+      <strong>Next Big Event Starts In:</strong>
+      <span id="timer">Loading...</span>
+    </div>
   </section>
 
   <section class="featured-events">
-    <h3>Upcoming Events</h3>
+    <h3>🎉 Upcoming Events</h3>
     <div class="card-container">
       <div class="card">
         <img src="my 1-school.jpg.jpg" alt="Event">
         <h4>Tech Symposium</h4>
         <p>Join the innovation wave!</p>
       </div>
-      <!-- Add more event cards -->
+      <div class="card">
+        <img src="my 2-hack.jpg.jpg" alt="Event">
+        <h4>Fusion Fiesta</h4>
+        <p>A night of culture, color, and music!</p>
+      </div>
+      <div class="card">
+        <img src="my 7-creket.jpg.jpeg" alt="Event">
+        <h4>Sports Mania</h4>
+        <p>Cheer, compete, conquer!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <h3>🌟 Event of the Month</h3>
+    <div class="highlight-box">
+      <img src="my 1-devhack.jpg.jpeg" alt="Highlight Event">
+      <div>
+        <h4>AI Hackathon 2025</h4>
+        <p>A 48-hour coding challenge hosted by Tech Club. Prizes worth ₹50,000!</p>
+        <a href="event-detail.html" class="btn">Know More</a>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 EventHive</p>
+    <p>© 2025 EventHive • Created with ❤️ by Students</p>
   </footer>
+
+  <script>
+    const countdown = () => {
+      const eventDate = new Date("June 5, 2025 10:00:00").getTime();
+      const now = new Date().getTime();
+      const gap = eventDate - now;
+
+      const day = Math.floor(gap / (1000 * 60 * 60 * 24));
+      const hour = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const min = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+      const sec = Math.floor((gap % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").textContent = `${day}d ${hour}h ${min}m ${sec}s`;
+    };
+    setInterval(countdown, 1000);
+  </script>
 </body>
 </html>
+
+
+
